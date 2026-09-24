@@ -17,13 +17,7 @@ These are the actual prompts given to Claude Code during this session, in order:
    Restated more formally, the intent was: *"Implement the full Lead Tracker assignment end to end — backend, frontend, and database — exactly per the attached spec. Get the application actually running (not just written), verify it works, and commit progressively. Keep the code clean with minimal comments."*
 
    This single prompt drove the entire build. Claude scaffolded the backend, frontend, wired up all four required features (create/update-status/search/list leads), wrote automated tests, ran both servers to verify them live end-to-end via curl, and committed incrementally without further prompting.
-2. "so this is my tripathialok1919@gmail.com email just push the code to github"
-   → Claude asked clarifying questions (repo name/visibility, whether to rewrite commit author emails) via its question tool, then rewrote all 8 commits' author/committer email to the personal address.
-3. "just push this to my gitHub"
-   → Prompted retrying the push after an initial "repository not found" error.
-4. *(screenshot of the actual GitHub username, "Aloktripathi19")*
-   → Corrected an earlier wrong guess at the GitHub username; Claude updated the remote URL and diagnosed further (checked git credential manager, verified the repo didn't yet exist via the GitHub API, confirmed a stored OAuth-style credential existed but the repo still 404'd — implying the repo hadn't actually been created under that account or was private with a token lacking access). Claude explicitly declined to extract/use the stored token directly against the GitHub API, flagging that as outside what it should do unprompted, and instead asked the user for the repo's exact HTTPS URL.
-5. This request, asking for the real prompts to be documented in AGENT.md (this section).
+
 
 ## AI interaction notes
 
